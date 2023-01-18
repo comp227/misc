@@ -1,5 +1,5 @@
 ```js
-const blogs = [
+const shows = [
   {
     _id: "5a422a851b54a676234d17f7",
     title: "An Idiot Abroad",
