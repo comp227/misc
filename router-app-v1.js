@@ -28,7 +28,7 @@ const Home = () => (
 
 const Task = ({ tasks }) => {
     const id = useParams().id
-    const task = tasks.find(n => n.id === Number(id))
+    const task = tasks.find(t => t.id === Number(id))
     return (
         <div>
             <h2>{task.content}</h2>
