@@ -9,7 +9,7 @@ In the following, we will use the entries of the most popular document database 
 Document bases usually use <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> as the logical representation of information. Below is the JSON document presenting the course *Basics of Programming*:
 
 
-```javascript
+```json
 {
   "id": ObjectId("10"),
   "name": "Basics of Programming",
@@ -25,7 +25,7 @@ The course document therefore has four key-value pairs. It can be thought that t
 The following is a document describing the student:
 
 
-```javascript
+```json
 {
   "id" : ObjectId("59"),
   "name": "Randy Lau",
@@ -45,7 +45,7 @@ In the document database, the documents are sorted into *collections* (eng. coll
 As we saw above with the student, it is possible to include objects within each other in document databases. The situation could also have been modeled like a "relational model" so that there would be its own collection for addresses, and a single address would be modeled as its own document:
 
 
-```javascript
+```json
 {
   "id" : ObjectId("123"),
   "street" : "540 Howard St",
@@ -57,7 +57,7 @@ As we saw above with the student, it is possible to include objects within each 
 The student document would now only contain a reference to the address document:
 
 
-```javascript
+```json
 {
   "id" : ObjectId("59"),
   "name": "Randy Lau",
@@ -78,24 +78,24 @@ One possibility would be to make exactly the same solution in the document base.
 
 Collection Student:
 
-```javascript
+```json
 [
   {
     "id": ObjectId("10"),
     "name" : "Powercat",
-    "student number" : 13457678
+    "student number" : 989456789
   },
   {
     "id": ObjectId("11"),
     "name": "Randy Lau",
-    "student number" : 14012345
+    "student number" : 989012345
   }
 ]
 ```
 
 Collection course:
 
-```javascript
+```json
 [
   {
     "id": ObjectId("34"),
@@ -113,7 +113,7 @@ Collection course:
 The execution would now be a "joint-table" collection:
 
 
-```javascript
+```json
 [
   {
     "id": 55
@@ -140,18 +140,18 @@ However, there are also other options. Depending on the use cases, it might be a
 
 Collection Student:
 
-```javascript
+```json
 [
   {
     "id": ObjectId("10")
     "name" : "Powercat",
-    "student number" : 13457678,
+    "student number" : 989456789,
     "performances" : [ ObjectId("55"), ObjectId("56") ]
   },
   {
     "id": ObjectId("11")
     "name": "Randy Lau",
-    "student number" : 14012345,
+    "student number" : 989012345,
     "executions" : [ ObjectId("57") ]
   }
 ]
@@ -159,7 +159,7 @@ Collection Student:
 
 Collection course:
 
-```javascript
+```json
 [
   {
     "id": ObjectId("34")
@@ -178,12 +178,12 @@ Collection course:
 
 In some cases, the best solution would be to abandon the documents that function as a link, i.e. the collection of achievements, and deposit the achievements in their entirety in the student documents:
 
-```javascript
+```json
 [
   {
     "id": ObjectId("10")
     "name" : "Powercat",
-    "student number" : 13457678,
+    "student number" : 989456789,
     "performances" : [
       {
         "id": 55
@@ -200,7 +200,7 @@ In some cases, the best solution would be to abandon the documents that function
   {
     "id": ObjectId("11")
     "name": "Randy Lau",
-    "student number" : 14012345,
+    "student number" : 989012345,
     "performances" : [
       {
         "id": 57
