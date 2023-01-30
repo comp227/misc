@@ -12,9 +12,9 @@ Document bases usually use <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>
 ```javascript
 {
   "id": ObjectId("10"),
-  "name": "Software Engineering",
+  "name": "Basics of Programming",
   "units": 5,
-  "lecturer": [ "Matti Luukkainen" ]
+  "lecturer": [ "A Youtube Personality" ]
 }
 ```
 
