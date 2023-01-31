@@ -1,6 +1,6 @@
-# Full Stack web application development exercise draft
+# Web application development exercise draft
 
-> This exercise *does not count* as an exercise for the subject studies
+> This is draft language for the final project and is completely subject to change
 
 In the exercise, a freely chosen application is implemented using React and/or Node. A mobile application implemented with React Native is also possible, in which case the recommended development platform is [Expo](https://expo.io/).
 
