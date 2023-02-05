@@ -1,27 +1,20 @@
 import ReactDOM from 'react-dom/client'
 import {useState} from 'react'
 
+import {BrowserRouter as Router, Link, Navigate, Route, Routes, useMatch, useNavigate} from "react-router-dom"
 import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link,
-    Navigate,
-    useParams,
-    useNavigate,
-    useMatch
-} from "react-router-dom"
-import {
-    Alert, AppBar,
+    Alert,
+    AppBar,
     Button,
-    Container, IconButton,
+    Container,
     Paper,
     Table,
     TableBody,
     TableCell,
     TableContainer,
     TableRow,
-    TextField, Toolbar
+    TextField,
+    Toolbar
 } from "@mui/material";
 
 
@@ -144,27 +137,25 @@ const App = () => {
         }, 10000)
     }
 
-    const padding = {
-        padding: 5
-    }
-
     const match = useMatch('/tasks/:id')
     const task = match
         ? tasks.find(task => task.id === Number(match.params.id))
         : null
 
+    const roboto = {
+        fontFamily: "Roboto"
+    }
+
     return (
-        <Container>
+        <Container style={roboto}>
             <div>
                 {(message &&
                     <Alert severity="success">
-                        {message} 
+                        {message}
                     </Alert>
                 )}
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton edge="start" color="inherit" aria-label="menu">
-                        </IconButton>
                         <Button color="inherit" component={Link} to="/">
                             home
                         </Button>
