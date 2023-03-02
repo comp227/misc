@@ -37,7 +37,7 @@ const patients: Patient[] = [
         date: '2019-08-05',
         type: 'OccupationalHealthcare',
         specialist: 'Eggman',
-        employerName: 'HyPD',
+        employerName: 'SPP',
         diagnosisCodes: ['Z57.1', 'Z74.3', 'M51.2'],
         description:
           'Patient mistakenly found himself in a nuclear plant waste site without protection gear. Very minor radiation poisoning. ',
